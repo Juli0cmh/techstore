@@ -1,0 +1,395 @@
+/* =========================================
+   VARIABLES GLOBALES (PALETA OFICIAL)
+   ========================================= */
+:root {
+  --azul-principal: #1565C0;  /* Azul tecnológico */
+  --azul-oscuro: #0D47A1;     /* Fondo navbar/footer */
+  --azul-claro: #42A5F5;      /* Hover y detalles */
+  --amarillo-accent: #FFEB3B; /* Botones y llamadas */
+  --gris-claro: #F5F7FA;      /* Fondo general */
+  --gris-medio: #D9E1E8;      /* Bordes suaves */
+  --blanco: #FFFFFF;          /* Tarjetas y fondos limpios */
+  --negro-suave: #1E1E1E;     /* Texto principal */
+}
+
+/* =========================================
+   ESTILOS GENERALES
+   ========================================= */
+body {
+  background-color: var(--gris-claro);
+  color: var(--negro-suave);
+  font-family: Arial, sans-serif; /* Puedes cambiarla por tu fuente favorita */
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================
+   ESTILOS DE LA PÁGINA "NOSOTROS"
+   ========================================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.about-page {
+  width: 100%;
+}
+
+.about-header-title {
+  background-color: var(--blanco);
+  padding: 2rem 0;
+  border-bottom: 2px solid var(--gris-medio);
+}
+
+.about-header-title h1 {
+  color: var(--negro-suave);
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+/* El fondo principal del footer usa el Azul Principal de tu tabla */
+.about-footer-grid {
+  background-color: var(--azul-principal);
+  color: var(--blanco);
+  padding: 3rem 0;
+}
+
+.grid-4-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+/* Los títulos usan el Amarillo Accent */
+.grid-col h3 {
+  color: var(--amarillo-accent);
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  font-weight: bold;
+}
+
+.cert-title {
+  margin-top: 1.5rem;
+}
+
+.grid-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.grid-col ul li {
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.grid-col ul li a {
+  color: var(--blanco);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* El hover de los links usa el Azul Claro */
+.grid-col ul li a:hover {
+  color: var(--azul-claro);
+  text-decoration: underline;
+}
+
+/* Iconos de Redes Sociales */
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  background-color: var(--azul-oscuro); /* Un azul más oscuro para que resalte el icono */
+  color: var(--blanco);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.icon:hover {
+  background-color: var(--azul-claro);
+}
+
+.icon.fb { background-color: #3b5998; }
+.icon.ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.icon.tk { background-color: #000000; }
+
+/* Badges (Tarjetas de pago y SSL) */
+.payment-badges, .cert-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background-color: var(--blanco);
+  color: var(--negro-suave);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border: 1px solid var(--gris-medio);
+}
+
+/* =========================================
+   ESTILOS DEL HOME Y PRODUCTOS
+   ========================================= */
+.home-page {
+  padding: 2rem 1.5rem;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-header h1 {
+  color: var(--azul-oscuro);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-header .subtitle {
+  color: var(--negro-suave);
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+/* Cuadrícula de productos */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding-bottom: 3rem;
+}
+
+/* Tarjeta individual de producto */
+.card {
+  background-color: var(--blanco);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--gris-medio);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
+}
+
+.product-details {
+  flex-grow: 1; /* Empuja el botón hacia abajo */
+  display: flex;
+  flex-direction: column;
+}
+
+.product-details h3 {
+  color: var(--azul-oscuro);
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.product-details p {
+  color: var(--negro-suave);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.product-price {
+  font-size: 1.3rem !important;
+  font-weight: bold;
+  color: var(--azul-principal) !important;
+  margin: 1rem 0 !important;
+}
+
+/* Botón Agregar al carrito */
+.add-to-cart-btn {
+  background-color: var(--amarillo-accent);
+  color: var(--negro-suave);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  width: 100%;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #FDD835; /* Un amarillo un poco más oscuro */
+}
+
+.add-to-cart-btn:active {
+  transform: scale(0.98);
+}
+
+/* Controles de cantidad en la tarjeta */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--gris-claro);
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+.quantity-controls button {
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-medio);
+  color: var(--azul-oscuro);
+  width: 35px;
+  height: 35px;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.quantity-controls button:hover {
+  background-color: var(--azul-claro);
+  color: var(--blanco);
+  border-color: var(--azul-claro);
+}
+
+.quantity-display {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+/* =========================================
+   NAVBAR (Barra Superior)
+   ========================================= */
+.navbar {
+  background-color: var(--azul-oscuro);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.navbar-left, .navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo {
+  color: var(--amarillo-accent);
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  color: var(--blanco);
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.cart-icon {
+  text-decoration: none;
+  font-size: 1.8rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background-color: #E53935; /* Rojo para alertas */
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+/* =========================================
+   SIDEBAR (Menú Desplegable)
+   ========================================= */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px; /* Escondido por defecto a la izquierda */
+  width: 250px;
+  height: 100vh;
+  background-color: var(--azul-principal);
+  z-index: 200;
+  transition: left 0.3s ease-in-out;
+  padding: 2rem;
+  box-shadow: 4px 0 15px rgba(0,0,0,0.2);
+}
+
+.sidebar.open {
+  left: 0; /* Aparece al activarse la clase .open */
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--amarillo-accent);
+  font-size: 1.5rem;
+  cursor: pointer;
+  float: right;
+  margin-bottom: 2rem;
+}
+
+.sidebar-links {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.sidebar-links a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.sidebar-links a:hover {
+  color: var(--amarillo-accent);
+}
+
+/* Espaciado para que el footer no se pegue arriba si la página es corta */
+.main-content {
+  min-height: calc(100vh - 300px); 
+}
