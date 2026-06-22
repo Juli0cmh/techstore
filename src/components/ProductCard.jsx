@@ -5,7 +5,7 @@ export default function ProductCard({
   increaseQty,
   decreaseQty,
 }) {
-  // 1. Desestructuración: Sacamos los datos del producto para no repetir "product."
+  // 1. Desestructuración: Sacamos los datos del producto
   const { id, name, description, price, image } = product;
 
   // 2. Lógica de estado: Buscamos si ya existe en el carrito
@@ -13,6 +13,15 @@ export default function ProductCard({
 
   // 3. Formato de precio
   const formattedPrice = price.toFixed(2);
+
+  // 4. Función para manejar el carrito y preparar la analítica web
+  const handleAddToCart = () => {
+    addToCart(product);
+    
+    // Espacio preparado para registrar el evento de "Agregar al carrito"
+    // Ideal para enviar datos de interacción de los usuarios
+    console.log(`Evento analítico: Producto ${name} agregado al carrito`);
+  };
 
   return (
     <div className="card">
@@ -32,7 +41,7 @@ export default function ProductCard({
         <button 
           type="button" 
           className="add-to-cart-btn"
-          onClick={() => addToCart(product)}
+          onClick={handleAddToCart}
         >
           Agregar al carrito
         </button>
